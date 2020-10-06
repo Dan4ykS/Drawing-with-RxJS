@@ -1,0 +1,107 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: 0.3s all;
+}
+
+.theme {
+  &_dark {
+    background-color: var(--darkBgColor);
+    color: var(--darkTextColor);
+  }
+  &_light {
+    background-color: var(--lightBgColor);
+    color: var(--lightTextColor);
+  }
+}
+
+button,
+.btn {
+  cursor: pointer;
+}
+
+.content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 70vw;
+  height: 700px;
+  padding: 20px;
+  border-radius: 15px;
+  border: 2px solid;
+  transform: translate(-50%, -50%);
+  transition: 0.4s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &.theme_dark {
+    background-color: var(--lightBgColor);
+    border-color: var(--borderDarkColor);
+  }
+
+  &.theme_light {
+    background-color: var(--darkBgColor);
+    border-color: var(--borderLightColor);
+  }
+
+  &__header {
+    display: flex;
+    input {
+      cursor: pointer;
+    }
+    div {
+      margin-left: 40px;
+    }
+  }
+
+  canvas {
+    cursor: url(../assets/brush.png) 5 40, pointer;
+    width: 100%;
+    height: 90%;
+    background-color: white;
+    margin: 20px 0;
+  }
+}
+
+.modalWrapper {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  .modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px 10px;
+    width: 250px;
+    background-color: white;
+    border-radius: 15px;
+
+    div {
+      display: flex;
+      justify-content: space-between;
+    }
+    input {
+      padding: 3px 5px;
+      outline: none;
+    }
+    h2 {
+      font-weight: 400;
+      font-size: 22px;
+      text-align: center;
+      margin-top: 0;
+    }
+    &__btns {
+      margin-top: 10px;
+    }
+  }
+}
+
+.hiddenElement {
+  display: none;
+}
