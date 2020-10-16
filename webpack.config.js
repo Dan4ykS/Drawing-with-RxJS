@@ -34,13 +34,13 @@ module.exports = (env = {}) => {
           collapseWhitespace: isProd,
         },
       }),
-      new CleanWebpackPlugin(),
     ];
     if (isProd) {
       plugins.push(
         new miniCssExtractPlugin({
-          filename: 'css/style-[hash:5].min.css',
-        })
+          filename: 'style-[hash:5].min.css',
+        }),
+        new CleanWebpackPlugin()
       );
     }
     return plugins;
